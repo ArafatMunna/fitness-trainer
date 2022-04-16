@@ -1,14 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 
 const Register = () => {
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     const [createUserWithEmailAndPassword, user, loading, hookError] =
         useCreateUserWithEmailAndPassword(auth);
+
+    useEffect(() => {
+        if (hookError) {
+            setError(hookError.message);
+        }
+    }, [hookError]);
+
+    useEffect(() => {
+        if (user) {
+            navigate("/");
+        }
+    }, [user]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
