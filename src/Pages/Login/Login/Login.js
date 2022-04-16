@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
     useSendPasswordResetEmail,
@@ -7,8 +7,12 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+    const emailRef = useRef();
+    const passwordRef = useRef();
     const [error, setError] = useState("");
     const navigate = useNavigate();
     const location = useLocation();
@@ -35,23 +39,26 @@ const Login = () => {
     const handleLogin = (event) => {
         event.preventDefault();
 
-        const email = event.target.email.value;
-        const password = event.target.password.value;
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
 
         signInWithEmailAndPassword(email, password);
         setError("");
     };
 
     const resetPassword = async (event) => {
-        const email = event.tar;
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast("Sent Email");
+        } else {
+            toast("Please enter your email address");
+        }
     };
 
     return (
-        <div
-            className="container w-50 mx-auto mt-5"
-            style={{ height: "100vh" }}
-        >
-            <h2 className="text-secondary text-center">Please Login</h2>
+        <div className="container w-50 mx-auto mt-5 form-container px-4 pt-5">
+            <h2 className="text-secondary text-center mb-4">Please Login</h2>
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -80,22 +87,25 @@ const Login = () => {
                     Login
                 </Button>
             </Form>
-            <p className="text-center mt-3">
-                New to Fitness Trainer?{" "}
-                <Link className="text-decoration-none" to="/register">
-                    Register
-                </Link>
-            </p>
-            <p>
-                Forget Password?{" "}
-                <button
-                    onClick={resetPassword}
-                    className="text-primary border-0 bg-white"
-                >
-                    Reset Password
-                </button>
-            </p>
+            <div className="d-flex justify-content-between mt-3 flex-wrap">
+                <p>
+                    New to Fitness Trainer?{" "}
+                    <Link className="text-decoration-none" to="/register">
+                        Register
+                    </Link>
+                </p>
+                <p>
+                    Forget Password?{" "}
+                    <button
+                        onClick={resetPassword}
+                        className="text-primary border-0 bg-white"
+                    >
+                        Reset Password
+                    </button>
+                </p>
+            </div>
             <SocialLogin />
+            <ToastContainer />
         </div>
     );
 };

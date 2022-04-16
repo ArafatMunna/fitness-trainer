@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import "./Register.css";
 
 const Register = () => {
     const [error, setError] = useState("");
@@ -42,11 +43,8 @@ const Register = () => {
     };
 
     return (
-        <div
-            className="container w-50 mx-auto mt-5"
-            style={{ height: "100vh" }}
-        >
-            <h2 className="text-secondary text-center">Please Register</h2>
+        <div className="container w-50 mx-auto mt-5 form-container px-4 pt-5">
+            <h2 className="text-secondary text-center mb-4">Please Register</h2>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
