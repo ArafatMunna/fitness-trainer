@@ -23,15 +23,18 @@ const Register = () => {
         }
     }, [user]);
 
-    const handleSubmit = (event) => {
+    const handleRegister = (event) => {
         event.preventDefault();
 
         const email = event.target.email.value;
         const password = event.target.password.value;
         const confirmPassword = event.target.confirmPassword.value;
 
+        console.log(email, password, confirmPassword);
+
         if (password === confirmPassword) {
             createUserWithEmailAndPassword(email, password);
+            setError("");
         } else {
             setError("Password didn't match");
         }
@@ -42,28 +45,26 @@ const Register = () => {
             className="container w-50 mx-auto mt-5"
             style={{ height: "100vh" }}
         >
-            <h2 className="text-secondary text-center">Please Login</h2>
-            <Form onClick={handleSubmit}>
+            <h2 className="text-secondary text-center">Please Register</h2>
+            <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
                         type="email"
-                        name="email"
                         placeholder="Enter email"
+                        name="email"
                         required
                     />
                 </Form.Group>
-
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
                         type="password"
-                        name="password"
                         placeholder="Password"
+                        name="password"
                         required
                     />
                 </Form.Group>
-
                 <Form.Group
                     className="mb-3"
                     controlId="formBasicConfirmPassword"
@@ -71,22 +72,24 @@ const Register = () => {
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control
                         type="password"
-                        name="confirmPassword"
                         placeholder="Confirm Password"
+                        name="confirmPassword"
                         required
                     />
                 </Form.Group>
                 <p className="text-danger">{error}</p>
                 <Button
-                    variant="secondary w-50 mx-auto d-block mb-2"
+                    className="w-50 d-block mx-auto "
+                    variant="secondary"
                     type="submit"
                 >
                     Register
                 </Button>
             </Form>
             <p className="text-center mt-3">
+                Already have an account?{" "}
                 <Link className="text-decoration-none" to="/login">
-                    Already have an account? Login
+                    Login
                 </Link>
             </p>
         </div>
