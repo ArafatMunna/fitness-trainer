@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
     const [error, setError] = useState("");
@@ -29,8 +30,6 @@ const Register = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         const confirmPassword = event.target.confirmPassword.value;
-
-        console.log(email, password, confirmPassword);
 
         if (password === confirmPassword) {
             createUserWithEmailAndPassword(email, password);
@@ -92,6 +91,7 @@ const Register = () => {
                     Login
                 </Link>
             </p>
+            <SocialLogin />
         </div>
     );
 };

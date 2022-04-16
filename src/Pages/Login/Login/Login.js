@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
     const [error, setError] = useState("");
@@ -28,7 +29,6 @@ const Login = () => {
 
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(email, password);
 
         signInWithEmailAndPassword(email, password);
         setError("");
@@ -74,6 +74,7 @@ const Login = () => {
                     Register
                 </Link>
             </p>
+            <SocialLogin />
         </div>
     );
 };
