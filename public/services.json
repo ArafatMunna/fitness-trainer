@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "FITNESS CONSULTATION",
+        "price": "1000",
+        "description": "Through a short survey, conversation, and a movement assessment, your coach will prescribe the perfect program to get you started and on track to meet your fitness goals.",
+        "img": "./images/services/services1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "GROUP WORKOUTS",
+        "price": "2000",
+        "description": "Full-body workouts are designed to build strength and endurance, using the energy of a small group or team of people around you and the expertise of the coach to maximize your results.",
+        "img": "./images/services/services2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "ONE-ON-ONE TRAINING",
+        "price": "3000",
+        "description": "One-on-one personalized workouts with your coach are designed to make you stronger from the inside out.",
+        "img": "./images/services/services3.jpg"
+    }
+]

@@ -4,9 +4,17 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark">
+        <Navbar
+            collapseOnSelect
+            expand="lg"
+            bg="secondary"
+            variant="dark"
+            sticky="top"
+        >
             <Container>
-                <Navbar.Brand as={Link} to="/">Fitness Trainer</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/">
+                    Fitness Trainer
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
