@@ -10,7 +10,9 @@ const Register = () => {
     const navigate = useNavigate();
 
     const [createUserWithEmailAndPassword, user, loading, hookError] =
-        useCreateUserWithEmailAndPassword(auth);
+        useCreateUserWithEmailAndPassword(auth, {
+            sendEmailVerification: true,
+        });
 
     useEffect(() => {
         if (hookError) {

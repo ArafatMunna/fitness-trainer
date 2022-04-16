@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+    useSendPasswordResetEmail,
+    useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -14,6 +17,8 @@ const Login = () => {
 
     const [signInWithEmailAndPassword, user, loading, hookError] =
         useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     useEffect(() => {
         if (hookError) {
@@ -37,6 +42,10 @@ const Login = () => {
         setError("");
     };
 
+    const resetPassword = async (event) => {
+        const email = event.tar;
+    };
+
     return (
         <div
             className="container w-50 mx-auto mt-5"
@@ -47,18 +56,18 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
+                        ref={emailRef}
                         type="email"
                         placeholder="Enter email"
-                        name="email"
                         required
                     />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
+                        ref={passwordRef}
                         type="password"
                         placeholder="Password"
-                        name="password"
                         required
                     />
                 </Form.Group>
@@ -76,6 +85,15 @@ const Login = () => {
                 <Link className="text-decoration-none" to="/register">
                     Register
                 </Link>
+            </p>
+            <p>
+                Forget Password?{" "}
+                <button
+                    onClick={resetPassword}
+                    className="text-primary border-0 bg-white"
+                >
+                    Reset Password
+                </button>
             </p>
             <SocialLogin />
         </div>

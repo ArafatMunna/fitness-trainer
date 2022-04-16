@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 
 const SocialLogin = () => {
-    const google = process.env.PUBLIC_URL + "images/social/google.png";
+    const google = process.env.PUBLIC_URL + "images/google.png";
     const navigate = useNavigate();
     const [error, setError] = useState("");
     const location = useLocation();
@@ -26,6 +26,11 @@ const SocialLogin = () => {
         }
     }, [user]);
 
+    const handleGoogleLogin = () => {
+        setError("");
+        signInWithGoogle();
+    };
+
     return (
         <div>
             <div className="d-flex align-items-center">
@@ -42,7 +47,7 @@ const SocialLogin = () => {
             <p className="text-danger text-center">{error}</p>
             <div>
                 <button
-                    onClick={() => signInWithGoogle()}
+                    onClick={handleGoogleLogin}
                     className="btn btn-info w-50 mx-auto d-block my-2"
                 >
                     <img style={{ width: "30px" }} src={google} alt="" />
