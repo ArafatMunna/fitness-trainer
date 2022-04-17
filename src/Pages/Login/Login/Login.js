@@ -57,55 +57,59 @@ const Login = () => {
     };
 
     return (
-        <div className="container w-50 mx-auto mt-5 form-container px-4 pt-5">
-            <h2 className="text-secondary text-center mb-4">Please Login</h2>
-            <Form onSubmit={handleLogin}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control
-                        ref={emailRef}
-                        type="email"
-                        placeholder="Enter email"
-                        required
-                    />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                        ref={passwordRef}
-                        type="password"
-                        placeholder="Password"
-                        required
-                    />
-                </Form.Group>
-                <p className="text-danger">{error}</p>
-                <Button
-                    className="w-50 mx-auto d-block"
-                    variant="secondary"
-                    type="submit"
-                >
-                    Login
-                </Button>
-            </Form>
-            <div className="d-flex justify-content-between mt-3 flex-wrap">
-                <p>
-                    New to Fitness Trainer?{" "}
-                    <Link className="text-decoration-none" to="/register">
-                        Register
-                    </Link>
-                </p>
-                <p>
-                    Forget Password?{" "}
-                    <button
-                        onClick={resetPassword}
-                        className="text-primary border-0 bg-white"
+        <div className="container">
+            <div className=" mx-auto mt-5 form-container px-4 pt-5">
+                <h2 className="text-secondary text-center mb-4">
+                    Please Login
+                </h2>
+                <Form onSubmit={handleLogin}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control
+                            ref={emailRef}
+                            type="email"
+                            placeholder="Enter email"
+                            required
+                        />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control
+                            ref={passwordRef}
+                            type="password"
+                            placeholder="Password"
+                            required
+                        />
+                    </Form.Group>
+                    <p className="text-danger">{error}</p>
+                    <Button
+                        className="w-50 mx-auto d-block"
+                        variant="secondary"
+                        type="submit"
                     >
-                        Reset Password
-                    </button>
-                </p>
+                        Login
+                    </Button>
+                </Form>
+                <div className="d-flex justify-content-between mt-3 flex-wrap">
+                    <p>
+                        New to Fitness Trainer?{" "}
+                        <Link className="text-decoration-none" to="/register">
+                            Register
+                        </Link>
+                    </p>
+                    <p>
+                        Forget Password?{""}
+                        <button
+                            onClick={resetPassword}
+                            className="text-primary border-0 bg-white reset-text"
+                        >
+                            Reset Password
+                        </button>
+                    </p>
+                </div>
+                <SocialLogin />
+                <ToastContainer />
             </div>
-            <SocialLogin />
-            <ToastContainer />
         </div>
     );
 };

@@ -19,58 +19,60 @@ const Checkout = () => {
     };
 
     return (
-        <div className="container w-50 mx-auto mt-5 form-container px-4 pt-5">
-            <h2 className="text-secondary text-center mb-4">
-                Your Personal Info
-            </h2>
-            <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicName">
-                    <Form.Label>Your Name</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter Your Name"
-                        name="name"
-                        required
-                    />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control
-                        value={user?.email}
-                        readOnly
-                        type="email"
-                        placeholder="Enter email"
-                        name="email"
-                        required
-                    />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicAddress">
-                    <Form.Label>Address</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Your Address"
-                        name="address"
-                        required
-                    />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPhone">
-                    <Form.Label>Phone</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Phone Number"
-                        name="phone"
-                        required
-                    />
-                </Form.Group>
-                <Button
-                    className="w-50 d-block mx-auto "
-                    variant="secondary"
-                    type="submit"
-                >
-                    Submit
-                </Button>
-            </Form>
-            <ToastContainer />
+        <div className="container">
+            <div className="mx-auto mt-5 form-container px-4 pt-5">
+                <h2 className="text-secondary text-center mb-4">
+                    Your Personal Info
+                </h2>
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group className="mb-3" controlId="formBasicName">
+                        <Form.Label>Your Name</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter Your Name"
+                            name="name"
+                            required
+                        />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control
+                            value={user?.email}
+                            readOnly
+                            type="email"
+                            placeholder="Enter email"
+                            name="email"
+                            required
+                        />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicAddress">
+                        <Form.Label>Address</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Your Address"
+                            name="address"
+                            required
+                        />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicPhone">
+                        <Form.Label>Phone</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Phone Number"
+                            name="phone"
+                            required
+                        />
+                    </Form.Group>
+                    <Button
+                        className="w-50 d-block mx-auto "
+                        variant="secondary"
+                        type="submit"
+                    >
+                        Submit
+                    </Button>
+                </Form>
+                <ToastContainer />
+            </div>
         </div>
     );
 };

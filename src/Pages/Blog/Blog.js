@@ -2,7 +2,7 @@ import React from "react";
 
 const Blog = () => {
     return (
-        <div className="container">
+        <div className="container p-3">
             <div className="mt-4">
                 <h3>Authentication এবং Authtorization এর মধ্যে পার্থক্য কি?</h3>
                 <p>
