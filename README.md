@@ -13,7 +13,7 @@ Live Site Link: [https://fitness-trainer-65c2f.web.app/](https://fitness-trainer
 * Register form in register page.
 * There is Active Link in navbar.
 
-## Used Library/Framework
+## Used Libraries/Frameworks
 
 * react.js
 * react bootstrap
