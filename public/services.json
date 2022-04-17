@@ -1,23 +1,23 @@
 [
     {
         "id": 1,
-        "name": "FITNESS CONSULTATION",
-        "price": "1000",
-        "description": "Through a short survey, conversation, and a movement assessment, your coach will prescribe the perfect program to get you started and on track to meet your fitness goals.",
+        "name": "TREADMILL WORKOUT",
+        "price": "2000",
+        "description": "One of the most popular types of home exercise equipment is the treadmill, which provides a straightforward, efficient aerobic workout. For many, treadmills are a good choice to begin a new exercise routine because walking is well tolerated by most individuals regardless of fitness level and for most back conditions.",
         "img": "./images/services/services1.jpg"
     },
     {
         "id": 2,
-        "name": "GROUP WORKOUTS",
-        "price": "2000",
-        "description": "Full-body workouts are designed to build strength and endurance, using the energy of a small group or team of people around you and the expertise of the coach to maximize your results.",
+        "name": "PUSH UP",
+        "price": "1000",
+        "description": "Fitness fads come and go, but the push-up consistently ranks among the most common exercises.Push-ups don't require any equipment, can be performed virtually anywhere, and are a great way to build upper body strength. Modern exercise routines complicated, but push-ups are about as simple and straightforward as it gets.",
         "img": "./images/services/services2.jpg"
     },
     {
         "id": 3,
-        "name": "ONE-ON-ONE TRAINING",
-        "price": "3000",
-        "description": "One-on-one personalized workouts with your coach are designed to make you stronger from the inside out.",
+        "name": "STRENGTH TRAINING",
+        "price": "2000",
+        "description": "No matter your age or athletic ability, strength training is the key to flexibility, mobility, improved performance and lower injury risk. Anyone, at any fitness level, can and should strength train. And it doesn't have to take hours at the gym to see results. I'll teach you the basics of strength training in the comfort of your own home.",
         "img": "./images/services/services3.jpg"
     }
 ]
