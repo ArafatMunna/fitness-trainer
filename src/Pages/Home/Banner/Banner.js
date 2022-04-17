@@ -20,6 +20,9 @@ const Banner = () => {
                     src={banner1}
                     alt="First slide"
                 />
+                <Carousel.Caption>
+                    <h3>Lifting weights and getting dates.</h3>
+                </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
@@ -27,6 +30,9 @@ const Banner = () => {
                     src={banner2}
                     alt="Second slide"
                 />
+                <Carousel.Caption>
+                    <h3>Train like a beast, look like a beauty.</h3>
+                </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
@@ -34,6 +40,9 @@ const Banner = () => {
                     src={banner3}
                     alt="Third slide"
                 />
+                <Carousel.Caption>
+                    <h3>Believe in yourself and you will be unstoppable.</h3>
+                </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
     );

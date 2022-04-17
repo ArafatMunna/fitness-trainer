@@ -91,7 +91,7 @@ const Login = () => {
                         Login
                     </Button>
                 </Form>
-                <div className="d-flex justify-content-between mt-3 flex-wrap">
+                <div className="d-flex justify-content-between mt-4 flex-wrap">
                     <p>
                         New to Fitness Trainer?{" "}
                         <Link className="text-decoration-none" to="/register">
