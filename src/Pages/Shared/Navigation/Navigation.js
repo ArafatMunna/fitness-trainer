@@ -7,6 +7,7 @@ import auth from "../../../firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
 
 const Navigation = () => {
+    const logo = process.env.PUBLIC_URL + "images/logo2.png";
     const [user, loading, error] = useAuthState(auth);
 
     const handleSignOut = () => {
@@ -21,7 +22,12 @@ const Navigation = () => {
             sticky="top"
         >
             <Container>
-                <Navbar.Brand as={Link} to="/">
+                <Navbar.Brand
+                    className="d-flex align-items-center"
+                    as={Link}
+                    to="/"
+                >
+                    <img height={40} src={logo} alt="" />
                     Fitness Trainer
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
