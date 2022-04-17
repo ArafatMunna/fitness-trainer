@@ -9,6 +9,7 @@ import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./Login.css"
 
 const Login = () => {
     const emailRef = useRef();
@@ -101,7 +102,7 @@ const Login = () => {
                         Forget Password?{""}
                         <button
                             onClick={resetPassword}
-                            className="text-primary border-0 bg-white reset-text"
+                            className="text-primary border-0 reset-btn"
                         >
                             Reset Password
                         </button>
