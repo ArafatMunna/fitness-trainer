@@ -8,13 +8,13 @@ import Login from "./Pages/Login/Login/Login";
 import Register from "./Pages/Login/Register/Register";
 import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
 import Footer from "./Pages/Shared/Footer/Footer";
-import Header from "./Pages/Shared/Header/Header";
+import Navigation from "./Pages/Shared/Navigation/Navigation";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 
 function App() {
     return (
         <div className="App">
-            <Header />
+            <Navigation />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route

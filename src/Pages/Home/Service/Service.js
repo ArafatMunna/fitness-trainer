@@ -6,7 +6,7 @@ const Service = ({ service }) => {
     const navigate = useNavigate();
     return (
         <div className="col-sm-12 col-md-6 col-lg-4 gx-5 gy-3">
-            <div className="card">
+            <div className="card shadow-sm">
                 <img src={img} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
@@ -16,7 +16,7 @@ const Service = ({ service }) => {
                         onClick={() => navigate("/checkout")}
                         className="btn btn-secondary"
                     >
-                        Checkout
+                        Book Now
                     </button>
                 </div>
             </div>

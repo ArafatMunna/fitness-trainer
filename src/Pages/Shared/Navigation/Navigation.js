@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
 
-const Header = () => {
+const Navigation = () => {
     const [user, loading, error] = useAuthState(auth);
 
     const handleSignOut = () => {
@@ -37,12 +37,14 @@ const Header = () => {
                             About
                         </Nav.Link>
                         {user ? (
-                            <button
-                                className="btn bnt-link text-white text-decoration-none"
-                                onClick={handleSignOut}
-                            >
-                                Logout
-                            </button>
+                            <div>
+                                <Nav.Link
+                                    className="text-white"
+                                    onClick={handleSignOut}
+                                >
+                                    Logout
+                                </Nav.Link>
+                            </div>
                         ) : (
                             <Nav.Link as={CustomLink} to="/login">
                                 Login
@@ -55,4 +57,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navigation;
